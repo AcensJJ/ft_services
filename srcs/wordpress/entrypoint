@@ -4,7 +4,7 @@
 # - unicorn:unicorn
 # - jacens:123
 # - norminet:password123
-# - tristan:motdepasse
+# - esteban:motdepasse
 
 MYSQL="mysql -h $WORDPRESS_DB_HOST -u $WORDPRESS_DB_USER --password=$WORDPRESS_DB_PASSWORD"
 
