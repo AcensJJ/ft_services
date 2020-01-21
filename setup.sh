@@ -1,5 +1,44 @@
 #!/bin/sh
 
+# Print dashboard
+if [ "$2" = "only" ]
+then
+    # Print dashboard
+    if [ "$1" = "dashboard" ]
+    then
+        clear
+        echo "\n\n\033[0;35mDASHBOARD :\n\033[0m"
+        kubectl get all
+    fi
+    # Print ip
+    if [ "$1" = "ip" ]
+    then
+        echo "\n\n                  Your ip is : \033[1;32m http://$MINIKUBE_IP \033[0m\n"
+    fi
+    # Print Password
+    if [ "$1" = "password" ]
+    then
+		echo "\033[1;35m\n  |================|\033[0m"
+		echo "\033[1;35m  |--  PASSWORD  --|\033[0m"
+		echo "\033[1;35m  |________________|\033[0m"
+        echo "\033[0;35m\n  --  \033[0;33mWordpress \033[0;35m--\n\033[0m"
+        echo "\033[0;31madmin  \033[2;35m>\033[0m"
+        echo "\033[0;90m  - \033[0;36mname\033[0m \033[2;49m:\033[0m '\033[0;32municorn\033[0m'  \033[0;36mpwd\033[0m \033[2;49m:\033[0m '\033[0;32municorn\033[0m'\n"
+        echo "\033[0;34muser   \033[2;35m>\033[0m"
+        echo "\033[0;90m  - \033[0;36mname\033[0m \033[2;49m:\033[0m '\033[0;32mjacens\033[0m'   \033[0;36mpwd\033[0m \033[2;49m:\033[0m '\033[0;32m123\033[0m'"
+        echo "\033[0;90m  - \033[0;36mname\033[0m \033[2;49m:\033[0m '\033[0;32mnorminet\033[0m' \033[0;36mpwd\033[0m \033[2;49m:\033[0m '\033[0;32mpassword123\033[0m'"
+        echo "\033[0;90m  - \033[0;36mname\033[0m \033[2;49m:\033[0m '\033[0;32mtristan\033[0m'  \033[0;36mpwd\033[0m \033[2;49m:\033[0m '\033[0;32mmotdepasse\033[0m'\n"
+        echo "\033[0;35m\n  --    \033[0;33mMySQL    \033[0;35m--\n\033[0m"
+        echo "\033[0;31madmin  \033[2;35m>\033[0m"
+        echo "\033[0;90m  - \033[0;36mname\033[0m \033[2;49m:\033[0m '\033[0;32mroot\033[0m' \033[0;36mpwd\033[0m \033[2;49m:\033[0m '\033[0;32mpassword\033[0m'\n"
+        echo "\033[0;34muser   \033[2;35m>\033[0m"
+        echo "\033[0;90m  - \033[0;36mname\033[0m \033[2;49m:\033[0m '\033[0;32muser\033[0m' \033[0;36mpwd\033[0m \033[2;49m:\033[0m '\033[0;32mpassword\033[0m'\n"
+        echo "\033[1;35m  -----------------\n\033[0m"
+    fi
+    exit 1
+fi
+
+
 # Ensure docker and minikube are installed
 if ! which docker >/dev/null 2>&1 ||
     ! which minikube >/dev/null 2>&1
@@ -69,5 +108,26 @@ fi
 # Print ip
 if [ "$1" = "ip" ]
 then
-    echo "\n\n                        \033[1;32m http://$MINIKUBE_IP \033[0m\n"
+    echo "\n\n                  Your ip is : \033[1;32m http://$MINIKUBE_IP \033[0m\n"
+fi
+
+# Print Password
+if [ "$1" = "password" ]
+then
+	echo "\033[1;35m\n  |================|\033[0m"
+	echo "\033[1;35m  |--  PASSWORD  --|\033[0m"
+	echo "\033[1;35m  |________________|\033[0m"
+    echo "\033[0;35m\n  --  \033[0;33mWordpress \033[0;35m--\n\033[0m"
+	echo "\033[0;31madmin  \033[2;35m>\033[0m"
+	echo "\033[0;90m  - \033[0;36mname\033[0m \033[2;49m:\033[0m '\033[0;32municorn\033[0m'  \033[0;36mpwd\033[0m \033[2;49m:\033[0m '\033[0;32municorn\033[0m'\n"
+	echo "\033[0;34muser   \033[2;35m>\033[0m"
+	echo "\033[0;90m  - \033[0;36mname\033[0m \033[2;49m:\033[0m '\033[0;32mjacens\033[0m'   \033[0;36mpwd\033[0m \033[2;49m:\033[0m '\033[0;32m123\033[0m'"
+	echo "\033[0;90m  - \033[0;36mname\033[0m \033[2;49m:\033[0m '\033[0;32mnorminet\033[0m' \033[0;36mpwd\033[0m \033[2;49m:\033[0m '\033[0;32mpassword123\033[0m'"
+	echo "\033[0;90m  - \033[0;36mname\033[0m \033[2;49m:\033[0m '\033[0;32mtristan\033[0m'  \033[0;36mpwd\033[0m \033[2;49m:\033[0m '\033[0;32mmotdepasse\033[0m'\n"
+	echo "\033[0;35m\n  --    \033[0;33mMySQL    \033[0;35m--\n\033[0m"
+	echo "\033[0;31madmin  \033[2;35m>\033[0m"
+	echo "\033[0;90m  - \033[0;36mname\033[0m \033[2;49m:\033[0m '\033[0;32mroot\033[0m' \033[0;36mpwd\033[0m \033[2;49m:\033[0m '\033[0;32mpassword\033[0m'\n"
+	echo "\033[0;34muser   \033[2;35m>\033[0m"
+	echo "\033[0;90m  - \033[0;36mname\033[0m \033[2;49m:\033[0m '\033[0;32muser\033[0m' \033[0;36mpwd\033[0m \033[2;49m:\033[0m '\033[0;32mpassword\033[0m'\n"
+	echo "\033[2;35m  -----------------\n\033[0m"
 fi
