@@ -1,5 +1,13 @@
 #!/bin/sh
 
+# Delete YAML
+if [ "$1" = "delete" ]
+then
+    echo "\n\033[0;31mDeleting pods !\033[0m\n"
+    kubectl delete -k srcs
+	exit 1
+fi
+
 # Print dashboard
 if [ "$2" = "only" ]
 then
@@ -13,6 +21,7 @@ then
     # Print ip
     if [ "$1" = "ip" ]
     then
+		MINIKUBE_IP=$(minikube ip)
         echo "\n\n                  Your ip is : \033[1;32m http://$MINIKUBE_IP \033[0m\n"
     fi
     # Print Password
@@ -37,7 +46,6 @@ then
     fi
     exit 1
 fi
-
 
 # Ensure docker and minikube are installed
 if ! which docker >/dev/null 2>&1 ||
@@ -87,15 +95,9 @@ docker build -t custom-mysql:1.11 srcs/mysql
 echo "\n\033[0;34mStarting Services\033[0m"
 echo "\n\033[1;32mOk !\033[0m\n"
 
-# Apply yaml files
-if [ "$1" = "delete" ]
-then
-    echo "\n\033[0;31mDeleting pods !\033[0m\n"
-    kubectl delete -k srcs
-else
-    echo "\n\033[0;35mStarting pods !\033[0m\n"
-    kubectl apply -k srcs
-fi
+# Appli YAML
+echo "\n\033[0;35mStarting pods !\033[0m\n"
+kubectl apply -k srcs
 
 # Print dashboard
 if [ "$1" = "dashboard" ]

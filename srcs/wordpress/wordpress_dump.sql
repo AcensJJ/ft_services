@@ -393,7 +393,7 @@ CREATE TABLE `wp_users` (
 
 LOCK TABLES `wp_users` WRITE;
 /*!40000 ALTER TABLE `wp_users` DISABLE KEYS */;
-INSERT INTO `wp_users` VALUES (1,'unicorn','$P$B0QZGXOnUg0CmNr/CR2aZ2ICkWT.Rc.','unicorn','jacens@student.42.fr','','2020-01-10 10:08:43','',0,'unicorn'),(2,'jacens','$P$BKHbNoMX/7r.9Bcd6RkZxhJbKrEM050','jacens','jacens@example.com','','2020-01-10 10:14:05','',0,'jacens'),(3,'norminet','$P$BbG9212tIAl2kdOXEF0qi1ye3vStyY0','norminet','norminet@42.fr','','2020-01-10 10:15:28','1578651328:$P$BAeTfzBxW4IdhXUTzMCrbz2HoKus0b.',0,'Norminet'),(4,'esteban','$P$BVg63piBTNwdFGaIWEEqRe.8xV7Jkr/','esteban','trbonnes@student.42.fr','','2020-01-10 10:17:55','1578651475:$P$BZAX.WvHLmpFbwAeV./dF0rwV5sWz4/',0,'esteban');
+INSERT INTO `wp_users` VALUES (1,'unicorn','$P$B0QZGXOnUg0CmNr/CR2aZ2ICkWT.Rc.','unicorn','jacens@student.42.fr','','2020-01-10 10:08:43','',0,'unicorn'),(2,'jacens','$P$BKHbNoMX/7r.9Bcd6RkZxhJbKrEM050','jacens','jacens@example.com','','2020-01-10 10:14:05','',0,'jacens'),(3,'norminet','$P$BbG9212tIAl2kdOXEF0qi1ye3vStyY0','norminet','norminet@42.fr','','2020-01-10 10:15:28','1578651328:$P$BAeTfzBxW4IdhXUTzMCrbz2HoKus0b.',0,'Norminet'),(4,'esteban','$P$BVg63piBTNwdFGaIWEEqRe.8xV7Jkr/','esteban','ereynier@student.42.fr','','2020-01-10 10:17:55','1578651475:$P$BZAX.WvHLmpFbwAeV./dF0rwV5sWz4/',0,'esteban');
 /*!40000 ALTER TABLE `wp_users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
