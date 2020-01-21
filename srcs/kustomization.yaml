@@ -1,0 +1,41 @@
+configMapGenerator:
+- name: nginx-config
+  files:
+    - nginx/nginx.conf
+- name: telegraf-config
+  files:
+    - telegraf/telegraf.conf
+secretGenerator:
+- name: mysql-pass
+  literals:
+  - password=unicorn
+- name: ftps-user
+  literals:
+  - username=unicorn
+  - password=unicorn
+- name: ssh-user
+  literals:
+  - username=unicorn
+  - password=unicorn
+- name: ssh-host-keys
+  files:
+  - ssh_host_rsa_key=ssh-keys/ssh_host_rsa_key
+  - ssh_host_ed25519_key=ssh-keys/ssh_host_ed25519_key
+- name: tls-key
+  files:
+  - tls.key=tls-keys/tls.key
+  - tls.crt=tls-keys/tls.crt
+- name: ftps-keys
+  files:
+  - pure-ftpd.pem=ftps-keys/pure-ftpd.pem
+resources:
+- nginx.yaml
+- mysql.yaml
+- wordpress.yaml
+- phpmyadmin.yaml
+- ftps.yaml
+- kubernetes-dashboard.yaml
+- ingress.yaml
+- grafana.yaml
+- influxdb.yaml
+- telegraf.yaml
