@@ -11,6 +11,12 @@ fi
 # Print dashboard
 if [ "$2" = "only" ]
 then
+	# Print minikube
+    if [ "$1" = "minikube" ]
+    then
+        echo "\n\033[0;35mMINIKUBE DASHBOARD :\n\033[0m"
+        minikube dashboard
+    fi
     # Print dashboard
     if [ "$1" = "dashboard" ]
     then
@@ -107,12 +113,6 @@ then
     kubectl get all
 fi
 
-# Print ip
-if [ "$1" = "ip" ]
-then
-    echo "\n\n                  Your ip is : \033[1;32m http://$MINIKUBE_IP \033[0m\n"
-fi
-
 # Print Password
 if [ "$1" = "password" ]
 then
@@ -132,4 +132,12 @@ then
 	echo "\033[0;34muser   \033[2;35m>\033[0m"
 	echo "\033[0;90m  - \033[0;36mname\033[0m \033[2;49m:\033[0m '\033[0;32muser\033[0m' \033[0;36mpwd\033[0m \033[2;49m:\033[0m '\033[0;32mpassword\033[0m'\n"
 	echo "\033[2;35m  -----------------\n\033[0m"
+fi
+
+echo "\n\n                  Your ip is : \033[1;32m http://$MINIKUBE_IP \033[0m\n"
+# Print minikube
+if [ "$1" = "minikube" ]
+then
+	echo "\n\n\033[0;35mMINIKUBE DASHBOARD :\n\033[0m"
+	minikube dashboard
 fi
