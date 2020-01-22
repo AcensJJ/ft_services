@@ -4,7 +4,7 @@
 [ -z "$SSH_PASSWORD" ] && SSH_PASSWORD=admin
 
 adduser -D "$SSH_USER"
-echo "$SSH_USER:$SSH_PASSWORD" | chpasswd
+echo "$SSH_USER:$SSH_PASSWORD" | SSHPWD
 echo "user:password = $SSH_USER:$SSH_PASSWORD"
 
 /usr/sbin/sshd

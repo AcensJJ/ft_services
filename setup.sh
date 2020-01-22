@@ -11,6 +11,12 @@ fi
 # Print dashboard
 if [ "$2" = "only" ]
 then
+	# Print ssh serv
+    if [ "$1" = "ssh" ]
+    then
+        echo "\n\033[0;35mSSH :\n\033[0m"
+        ssh -v root@$KUB_IP -p 21
+    fi
 	# Print minikube
     if [ "$1" = "minikube" ]
     then
@@ -141,3 +147,9 @@ then
 	echo "\n\n\033[0;35mMINIKUBE DASHBOARD :\n\033[0m"
 	minikube dashboard
 fi
+# Print ssh serv
+    if [ "$1" = "ssh" ]
+    then
+        echo "\n\033[0;35mSSH :\n\033[0m"
+        ssh -v root@$KUB_IP -p 21
+    fi
