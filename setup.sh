@@ -11,11 +11,12 @@ fi
 # Print dashboard
 if [ "$2" = "only" ]
 then
+	MINIKUBE_IP=$(minikube ip)
 	# Print ssh serv
     if [ "$1" = "ssh" ]
     then
         echo "\n\033[0;35mSSH :\n\033[0m"
-        ssh -v root@$KUB_IP -p 21
+        ssh -v root@$MINIKUBE_IP -p 21
     fi
 	# Print minikube
     if [ "$1" = "minikube" ]
@@ -33,7 +34,6 @@ then
     # Print ip
     if [ "$1" = "ip" ]
     then
-		MINIKUBE_IP=$(minikube ip)
         echo "\n\n                  Your ip is : \033[1;32m http://$MINIKUBE_IP \033[0m\n"
     fi
     # Print Password
@@ -151,5 +151,5 @@ fi
     if [ "$1" = "ssh" ]
     then
         echo "\n\033[0;35mSSH :\n\033[0m"
-        ssh -v root@$KUB_IP -p 21
+        ssh -v root@$MINIKUBE_IP -p 21
     fi
