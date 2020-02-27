@@ -1,2 +1,3 @@
 echo "\n\033[0;35mSSH :\n\033[0m"
-ssh -v root@$MINIKUBE_IP -p 21
+IP=$(minikube ip)
+ssh -v root@$IP -p 21

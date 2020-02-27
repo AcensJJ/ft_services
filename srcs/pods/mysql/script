@@ -6,34 +6,30 @@ then
 	mysql_install_db --user=root > /dev/null
 	echo Done!
 fi
-
 if [ ! -d /run/mysqld ]
 then
 	mkdir -p /run/mysqld
 fi
-
-tfile=`mktemp`
-if [ ! -f "$tfile" ]
+tmpfile=`mktemp`
+if [ ! -f "$tmpfile" ]
 then
 	echo Cannot create temp file!
 	exit 1
 fi
 
 echo Root password is $MYSQL_ROOT_PASSWORD
-
-cat << EOF > $tfile
+cat << EOF > $tmpfile
 FLUSH PRIVILEGES;
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY "$MYSQL_ROOT_PASSWORD" WITH GRANT OPTION;
 EOF
 
 echo Bootstraping...
-if ! /usr/bin/mysqld --user=root --bootstrap --verbose=0 < $tfile
+if ! /usr/bin/mysqld --user=root --bootstrap --verbose=0 < $tmpfile
 then
 	echo Cannot bootstrap mysql!
 	exit 1
 fi
-rm -f $tfile
+rm -f $tmpfile
 echo Bootstraping done!
-
 echo Launching mysql server!
 exec /usr/bin/mysqld --user=root --console

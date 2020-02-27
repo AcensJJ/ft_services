@@ -1,3 +1,5 @@
+echo "\n\033[1;34mStarting Services\033[0m\n"
+eval $(minikube docker-env)
 echo "\n\033[0;36mStarting nginx...\033[0m\n"
 docker build -t custom-nginx:1.11 srcs/pods/nginx
 echo "\n\033[0;36mStarting ftps...\033[0m\n"
