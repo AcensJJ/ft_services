@@ -32,8 +32,8 @@ then
 fi
 
 # setup
-sed -i 's/^exec .*//' /usr/local/bin/docker-entrypoint.sh
-docker-entrypoint.sh php-fpm
+sed -i 's/^exec .*//' /usr/local/bin/docker-script.sh
+docker-script.sh php-fpm
 
 # run
 /usr/sbin/nginx && /usr/local/sbin/php-fpm

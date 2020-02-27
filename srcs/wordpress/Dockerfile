@@ -5,6 +5,6 @@ RUN apk update && \
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY wordpress_dump-target.sql /wordpress-dump.sql
-COPY entrypoint /entrypoint
+COPY script /script
 
-ENTRYPOINT sh /entrypoint
+ENTRYPOINT sh /script

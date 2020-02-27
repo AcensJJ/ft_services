@@ -1,0 +1,6 @@
+#!/bin/sh
+
+sed -i 's/^exec .*//' /docker-script.sh
+/docker-script.sh php-fpm
+
+/usr/sbin/nginx && /usr/local/sbin/php-fpm

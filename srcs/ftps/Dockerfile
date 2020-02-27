@@ -9,6 +9,6 @@ RUN printf '%s\n' \
     && apk update \
     && apk add pure-ftpd@testing=1.0.49-r0
 
-COPY entrypoint-target /entrypoint
+COPY script-target /script
 
-ENTRYPOINT sh /entrypoint
+ENTRYPOINT sh /script
