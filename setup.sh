@@ -8,7 +8,7 @@ then
 		exit 1
 	fi
     echo "\n\033[0;31mDeleting pods !\033[0m\n"
-    kubectl delete -k srcs
+    kubectl delete -k srcs/pods
 	exit 1
 fi
 
@@ -66,7 +66,7 @@ echo "\n\033[1;34mStarting Services\033[0m\n"
 eval $(minikube docker-env)
 sh srcs/sh/build_image.sh
 echo "\n\033[0;35mStarting pods !\033[0m\n"
-kubectl apply -k srcs
+kubectl apply -k srcs/pods
 
 if [ "$1" = "dashboard" ]
 then
