@@ -1,3 +1,8 @@
+IP=$(minikube ip)
+cp srcs/ftps/entrypoint srcs/ftps/entrypoint-target
+sed -i '' "s/##IP##/$IP/g" srcs/ftps/entrypoint-target
+cp srcs/wordpress/wordpress_dump.sql srcs/wordpress/wordpress_dump-target.sql
+sed -i '' "s/##IP##/$IP/g" srcs/wordpress/wordpress_dump-target.sql
 echo "\n\033[1;34mStarting Services\033[0m\n"
 eval $(minikube docker-env)
 chmod 777 srcs/grafana/grafana.db

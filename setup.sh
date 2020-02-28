@@ -59,8 +59,7 @@ then
 fi
 
 # Config pods
-sh srcs/sh/config_file.sh
-sh srcs/sh/build_image.sh
+sh srcs/sh/config_images.sh
 kubectl apply -k srcs
 
 # info
