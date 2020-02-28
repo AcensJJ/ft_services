@@ -3,24 +3,19 @@
 # DEL
 if [ "$1" = "delete" ]
 then
-	if ! minikube status >/dev/null 2>&1
-		then
-   		echo "\033[1;33mMinikube is not started!\033[0m\n"
-		exit 1
-	fi
     echo "\n\033[0;31mDeleting pods !\033[0m\n"
     kubectl delete -k srcs
 	exit 1
+fi
+if [ "$1" = "restart" ]
+then
+    echo "\n\033[0;31mDeleting pods !\033[0m\n"
+    kubectl delete -k srcs
 fi
 
 # Dont reload
 if [ "$2" = "only" ]
 then
-	if ! minikube status >/dev/null 2>&1
-	then
-   		echo "\033[1;33mMinikube is not started!\033[0m\n"
-		exit 1
-	fi
     if [ "$1" = "ssh" ]
     then
         sh srcs/sh/ssh.sh
