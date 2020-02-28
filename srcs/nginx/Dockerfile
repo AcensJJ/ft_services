@@ -3,8 +3,8 @@ MAINTAINER Jacens
 
 RUN apk add --update openssh
 
-COPY script /script
+COPY entrypoint /entrypoint
 
-ENTRYPOINT sh /script
+ENTRYPOINT sh /entrypoint
 
 EXPOSE 443 80 22

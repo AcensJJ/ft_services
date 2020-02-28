@@ -9,7 +9,7 @@ then
 		exit 1
 	fi
     echo "\n\033[0;31mDeleting pods !\033[0m\n"
-    kubectl delete -k srcs/pods
+    kubectl delete -k srcs
 	exit 1
 fi
 
@@ -60,15 +60,13 @@ then
         echo "\033[1;31mCannot start minikube!\033[0m"
         exit 1
     fi
-    sh srcs/sh/addons.sh
+	sh srcs/sh/addons.sh
 fi
 
 # Config pods
-IP=$(minikube ip)
 sh srcs/sh/config_file.sh
 sh srcs/sh/build_image.sh
-echo "\n\033[0;35mStarting pods !\033[0m\n"
-kubectl apply -k srcs/pods
+kubectl apply -k srcs
 
 # info
 if [ "$1" = "dashboard" ]
