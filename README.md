@@ -13,9 +13,9 @@ Vous allez aussi devoir mettre en place :
 - Le dashboard web de <strong>Kubernetes</strong>. Celui-ci est utile pour gérer votre cluster.
 - Un <strong>Load Balancer</strong> qui gère l’accès externe à vos services dans un cluster. C’est
 uniquement lui qui vous servira pour exposer vos services. Vous devez garder les
-ports propres aux services (IP :3000 pour <strong>grafana</strong> etc).
+ports propres aux services (IP `:3000` pour grafana etc).
 - Un serveur <strong>Nginx</strong> ouvert sur les `ports 80 et 443`. Le `port 80` sera en <strong>http</strong> et devra
-faire une redirection systématique de type 301 vers le `443`, qui sera lui en <strong>https</strong>.
+faire une redirection systématique de type `301` vers le `443`, qui sera lui en <strong>https</strong>.
 La page affichée n’a pas d’importance.
 - Un serveur <strong>FTPS</strong> ouvert sur le `port 21`.
 - Un <strong>WordPress</strong> ouvert sur le `port 5050`, fonctionnant avec une base de données
@@ -28,7 +28,7 @@ deux devront aussi être dans deux containers distincts. Vous devrez créer un d
 - En cas de crash ou d’arrêt d’un des deux containers de base de données, vous
 devrez vous assurer que celles-ci puissent persister et ne soient pas perdues. En
 cas de suppression, les volumes où la data est sauvegardée doivent persister.
-- Vous devrez vous assurer de pouvoir accéder à votre Nginx en connexion <strong>SSH</strong>.
+- Vous devrez vous assurer de pouvoir accéder à votre <strong>Nginx</strong> en connexion <strong>SSH</strong>.
 - Chacun de vos containers devra pouvoir redémarrer automatiquement en cas de
 crash ou d’arrêt d’un des éléments le composant.
 
