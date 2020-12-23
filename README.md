@@ -33,11 +33,24 @@ cas de suppression, les volumes où la data est sauvegardée doivent persister.
 crash ou d’arrêt d’un des éléments le composant.
 
 
-# Resultat
+# Documentation
 
-`Bientot`
+Install ```helm``` / ```jq``` / ```docker``` / ```docker-machine``` / ```virtualbox``` / ```kubectl``` / ```minikube``` : <a href="https://github.com/AcensJJ/ft_services/blob/master/srcs/doc">Documentation</a>.
 
+Git clone le projet et ```./setup.sh [$1 (delete / restart / ssh / minikube / dashboard / ip / password)] [$2 (only)] ``` dans le projet (ft_services).
+
+- <strong>$1</strong> : 
+  - ```delete``` : suppression des containers (no only possible)
+  - ```restart``` : redemarrage de tout les containers (no only possible)
+  - ```ssh``` : redirection vers le ssh
+  - ```minikube``` : activation et redirection de l'interface minikube
+  - ```dashboard``` : affichage des containers et de leur etat
+  - ```ip``` : voir l'ip du serveur
+  - ```password``` : afficher les mots de passe MySql et wordpress
+  
+- <strong>$2</strong>:
+  - ```only``` : pour executer seulement le premier argument (seulement suprimé les containers, voir l'ip, etc...)
 
 # Technologie
 
-`Bientot`
+![image](https://user-images.githubusercontent.com/45235527/96755415-fd613c00-13d2-11eb-9e80-ca852dbd7cac.png) <img src="https://user-images.githubusercontent.com/45235527/96755516-1b2ea100-13d3-11eb-90a5-eef37dc45090.png" width="300" height="200" /> <img src="https://user-images.githubusercontent.com/45235527/96755596-36011580-13d3-11eb-8f1f-3d0df5ca7782.png" width="300" height="200" /> <img src="https://user-images.githubusercontent.com/45235527/96755726-5e890f80-13d3-11eb-9c6b-5ac803a7a5fc.png" width="300" height="200" /> <img src="https://user-images.githubusercontent.com/45235527/96755647-47e2b880-13d3-11eb-918f-e904e959f4f9.png" width="300" height="200" /> <img src="https://user-images.githubusercontent.com/45235527/96904960-1d0e6800-1498-11eb-9ebf-beddaae4bb93.png" width="300" height="200" /> <img src="https://user-images.githubusercontent.com/45235527/103042867-453f4380-457b-11eb-8ce7-fc5eb8b99269.png" width="300" height="200" /> <img src="https://user-images.githubusercontent.com/45235527/103042900-6738c600-457b-11eb-9009-4794fe3e5162.jpg" width="300" height="200" /> <img src="https://user-images.githubusercontent.com/45235527/103042921-7455b500-457b-11eb-8e08-e4e9a265c4a1.png" width="300" height="200" /> <img src="https://user-images.githubusercontent.com/45235527/103042929-820b3a80-457b-11eb-8ea9-7381c4f22fb8.jpeg" width="300" height="200" />
